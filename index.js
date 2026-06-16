@@ -4,7 +4,9 @@ import githubRoutes from './src/routes/githubRoutes.js'
 const app = express();
 app.use(express.json());
 app.use("/api", githubRoutes);
-
+app.get('/' , (req,res)=>{
+    res.send('Hello their ')
+})
 
 const port = 3000;
 
