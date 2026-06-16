@@ -1,11 +1,33 @@
-const express = require('express');
+
+import { sequelize } from './src/configs/db.js'
+import express from 'express'
 const app = express();
+app.use(express.json());
+
 const port = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+async function startServer() {
+    try {
+        await sequelize.authenticate();
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+        console.log(
+            "Database Connected"
+        );
+
+        await sequelize.sync();
+
+        console.log(
+            "Tables Created Successfully"
+        );
+
+        app.listen(port, () => {
+            console.log(
+                `Server running on ${port}`
+            );
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+startServer();
