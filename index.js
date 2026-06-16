@@ -1,7 +1,9 @@
 import { sequelize } from './src/configs/db.js'
 import express from 'express'
+import githubRoutes from './src/routes/githubRoutes.js'
 const app = express();
 app.use(express.json());
+app.use("/api", githubRoutes);
 
 
 const port = 3000;
