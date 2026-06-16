@@ -1,8 +1,8 @@
-
 import { sequelize } from './src/configs/db.js'
 import express from 'express'
 const app = express();
 app.use(express.json());
+
 
 const port = 3000;
 
