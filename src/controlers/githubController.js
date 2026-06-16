@@ -1,6 +1,5 @@
 import {GithubProfile} from '../database/GithubProfile.js'
-// const { analyzeGithubProfile} = require("../services/github.service");
-const analyzeGithubProfile = function () { }
+import { analyzeGithubProfile } from '../services/githubService.js';
 export const analyzeProfile = async (req, res) => {
     try {
         const { username } = req.params;
