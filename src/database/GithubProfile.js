@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import sequelize  from"../configs/db.js"
+import {sequelize}  from"../configs/db.js"
 
 export const GithubProfile = sequelize.define(
   "GithubProfile",

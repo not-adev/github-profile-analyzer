@@ -1,17 +1,16 @@
 import { Router } from "express";
 
-const analyzeProfile = function() {};
-const etAllProfiles = analyzeProfile;
-const getSingleProfile = analyzeProfile;
-const getAllProfiles = getSingleProfile;
+import {
+    analyzeProfile,
+    getAllProfiles,
+    getSingleProfile
+} from '../controlers/githubController.js'
 
+const router = Router();
 
- const router = Router();
+router.get("/analyze/:username", analyzeProfile);
 
-router.get("/analyze/:username",analyzeProfile);
+router.get("/profiles", getAllProfiles);
 
-router.get("/profiles",getAllProfiles);
-
-router.get("/profiles/:username",getSingleProfile);
-
-export default router
+router.get("/profiles/:username", getSingleProfile);
+export default router;
